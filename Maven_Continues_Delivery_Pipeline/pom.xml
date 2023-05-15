@@ -6,22 +6,35 @@
 
     <groupId>org.example</groupId>
     <artifactId>Maven_Continues_Delivery_Pipeline</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0-Releas</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <build>
         <plugins>
             <plugin>
-                <groupId>org.sonarsource.scanner.maven</groupId>
-                <artifactId>sonar-maven-plugin</artifactId>
-                <version>3.8.0.2131</version>
+               <groupId>org.sonarsource.scanner.maven</groupId>
+		        <artifactId>sonar-maven-plugin</artifactId>
+    		   <version>3.9.0.2155</version>
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+          <id>nexus-repo</id>
+          <name>Releas</name>
+          <url>http://localhost:8081/repository/Maven_Release/</url>
+        </repository>
+        <snapshotRepository>
+          <id>nexus-repo</id>
+          <name>Snapshot</name>
+          <url>http://localhost:8081/repository/Maven_Snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
 
 </project>
